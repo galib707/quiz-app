@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container_inner,
+.container {
+  /* border: 2px solid black; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  color: white;
+  /* border: 10px solid green; */
+  background-color: rgb(36, 99, 78);
+}
+.choice-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid green; */
+}
+.square {
+  margin: 2em;
+  width: 10em;
+  height: 5em;
+}
+.question {
+  max-width: 100%;
+  display: flex;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  margin-block: 2em;
+  font-size: 2em;
+}
+button {
+  font-size: 10px;
+}
+
+.horizontal-bar {
+  width: 100vw;
+  border: 2px solid red;
+  height: 10px;
+  background-color: red;
+  animation-iteration-count: infinite;
+  animation-duration: 5000ms;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes decreaseBarWidth {
+  0% {
+    width: 100vw;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+.scorboard {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.scoreboard_header {
+  width: 800px;
+  /* height: 800px; */
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  border-bottom: 2px solid white;
+}
+.ques_number {
+  width: 10%;
+  height: 60px;
+  border-right: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.questions {
+  width: 60%;
+  height: 60px;
+  height: 60px;
+  border-right: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.correct_answer {
+  width: 15%;
+  height: 60px;
+  height: 60px;
+  border-right: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.your_answer {
+  width: 15%;
+  height: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
