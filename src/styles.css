@@ -61,7 +61,7 @@ button {
   border: 2px solid red;
   height: 10px;
   background-color: red;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 5;
   animation-duration: 5000ms;
   position: fixed;
   left: 0;

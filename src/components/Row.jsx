@@ -9,7 +9,7 @@ function Row(props) {
       <div
         className="your_answer"
         style={{
-          backgroundColor: `${props.item[2] === false ? "red" : "inherit"}`,
+          backgroundColor: `${props.item[2] === false ? "red" : "green"}`,
         }}
       >
         {" "}

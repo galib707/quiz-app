@@ -1,10 +1,11 @@
 import Question from "./Question";
 import Option from "./Option";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Bar from "./Bar";
 import Confetti from "react-dom-confetti";
 import quesObj from "../questions";
 import ScoreBorad from "./ScoreBorad";
+import { useRef } from "react";
 
 function Quiz() {
   let [questionID, setQuestionID] = useState(0);
@@ -12,6 +13,8 @@ function Quiz() {
   let [scoreTable, setScoreTable] = useState([]);
   let [startConfettin, setStartConfettin] = useState(false);
   let [clicked, setClicked] = useState(false);
+  // let [Id, setTimeoutId] = useState(null);
+  let timerID = useRef(null);
 
   const scoreRecord = (id, isCorrect, text) => {
     let ques = quesObj[id].ques;
@@ -38,7 +41,23 @@ function Quiz() {
     scoreRecord(questionID, ans, quesObj[questionID].options[i].text);
     setSelected(i);
     setQuestionID(questionID + 1 <= quesObj.length - 1 ? questionID + 1 : 0);
+    // if (questionID.length === quesObj.length - 2) {
+    //   clearTimeout(Id);
+    // }
   };
+
+  useEffect(() => {
+    setSelected(null);
+    if (questionID === 4) {
+      return;
+    }
+    timerID.current = setTimeout(() => {
+      setQuestionID((prev) => prev + 1);
+    }, 5000);
+    return () => {
+      clearTimeout(timerID.current);
+    };
+  }, [questionID]);
 
   console.log();
 
